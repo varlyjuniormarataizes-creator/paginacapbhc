@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>BHC Beauty — Sua beleza começa de dentro para fora</title>
+<meta name="description" content="Skincare, Body Splash e Suplementos BHC Beauty. Fale com a gente no WhatsApp ou acesse nosso site." />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="BHC Beauty" />
+<meta property="og:description" content="Sua beleza começa de dentro para fora. Skincare • Body Splash • Suplementos." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================================================
+     BHC BEAUTY — Página de captura (link-in-bio)
+     Tema: boudoir de perfumaria — vinho profundo + verniz dourado
+     ============================================================ */
+
+  :root{
+    --berry-950: #37081c;
+    --berry-900: #4a0e26;
+    --berry-800: #6b1235;
+    --magenta-600: #c81457;
+    --crimson-600: #9e1b3e;
+    --gold-300: #ecd6a4;
+    --gold-400: #d9b877;
+    --gold-600: #b8874a;
+    --cream-50: #fbf3ea;
+    --cream-100: #f3e6d8;
+    --ink-900: #2a0a15;
+
+    --whatsapp: #25D366;
+    --whatsapp-dark: #1da851;
+
+    --font-display: 'Playfair Display', 'Georgia', serif;
+    --font-body: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html, body{
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background: var(--berry-950);
+  }
+
+  body{
+    font-family: var(--font-body);
+    color: var(--cream-50);
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 48px;
+  }
+
+  /* ---------- Ambient background ---------- */
+  .bg-scene{
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 40% at 50% 0%, rgba(216,163,90,0.16), transparent 60%),
+      radial-gradient(ellipse 80% 60% at 15% 15%, rgba(200,20,87,0.35), transparent 55%),
+      radial-gradient(ellipse 80% 60% at 85% 85%, rgba(155,10,50,0.4), transparent 55%),
+      linear-gradient(180deg, var(--berry-950) 0%, var(--ink-900) 100%);
+  }
+  .bg-scene::before{
+    /* faint damask texture using repeating radial dots */
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    background-image: radial-gradient(circle, var(--gold-300) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ scroll-behavior: auto !important; }
+  }
+
+  /* ---------- Page shell ---------- */
+  .page{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 440px;
+    padding: 40px 20px 0;
+  }
+
+  /* ---------- Header / mark ---------- */
+  .mark{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: rise 0.7s ease both;
+  }
+
+  .mark-logo{
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5), 0 0 0 2px var(--gold-400);
+    transition: transform 0.3s ease;
+  }
+  .mark-logo:hover{
+    transform: scale(1.04);
+  }
+
+  .wordmark{
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 2.15rem;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    color: var(--cream-50);
+    margin: 0;
+  }
+  .wordmark .accent{ color: var(--gold-300); font-style: italic; font-weight: 600; }
+
+  .subwordmark{
+    margin-top: 4px;
+    font-size: 0.72rem;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--gold-400);
+    font-weight: 600;
+  }
+
+  .tagline{
+    margin: 20px 0 0;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.18rem;
+    line-height: 1.4;
+    color: var(--cream-100);
+    max-width: 300px;
+  }
+
+  .eyebrow-row{
+    margin: 22px 0 0;
+    display:flex;
+    align-items:center;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+  .eyebrow-row .line{
+    height:1px;
+    width: 28px;
+    background: linear-gradient(90deg, transparent, var(--gold-400));
+  }
+  .eyebrow-row .line.right{ background: linear-gradient(90deg, var(--gold-400), transparent); }
+  .eyebrow-row span.txt{
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-300);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* ---------- Product shelf ---------- */
+  .shelf{
+    margin-top: 26px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    animation: rise 0.7s ease both;
+    animation-delay: 0.08s;
+  }
+
+  .product-card{
+    background: linear-gradient(160deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
+    border: 1px solid rgba(217,184,119,0.25);
+    border-radius: 16px;
+    padding: 8px 8px 10px;
+    text-align: center;
+    backdrop-filter: blur(2px);
+    transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+  }
+  .product-card:hover{
+    transform: translateY(-4px);
+    border-color: rgba(217,184,119,0.6);
+    background: linear-gradient(160deg, rgba(255,255,255,0.11), rgba(255,255,255,0.03));
+  }
+
+  .product-card .thumb{
+    width: 100%;
+    aspect-ratio: 4/5;
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--cream-50);
+  }
+  .product-card .thumb img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .product-card .label{
+    display:block;
+    margin-top: 8px;
+    font-size: 0.62rem;
+    letter-spacing: 0.03em;
+    color: var(--cream-100);
+    font-weight: 500;
+    line-height: 1.25;
+  }
+
+  /* ---------- Kit Completo banner ---------- */
+  .kit-banner{
+    margin-top: 26px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(217,184,119,0.25);
+    animation: rise 0.7s ease both;
+    animation-delay: 0.08s;
+  }
+  .kit-banner img{
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ---------- Video section (9:16 Shorts) ---------- */
+  .video-section{
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    animation: rise 0.7s ease both;
+    animation-delay: 0.12s;
+  }
+
+  .video-card{
+    background: rgba(42, 10, 21, 0.65);
+    border: 1px solid rgba(217, 184, 119, 0.35);
+    border-radius: 20px;
+    padding: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    backdrop-filter: blur(8px);
+    text-align: center;
+  }
+
+  .video-title{
+    margin: 0 0 8px;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold-300);
+    letter-spacing: 0.02em;
+  }
+
+  .video-action-hint{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(200, 20, 87, 0.3);
+    border: 1px solid var(--gold-400);
+    color: var(--gold-300);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  .video-action-hint svg{
+    width: 12px;
+    height: 12px;
+    fill: var(--gold-300);
+  }
+
+  .video-container{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+  }
+
+  .video-container iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* ---------- Divider ornament ---------- */
+  .ornament{
+    margin: 30px auto 0;
+    width: 100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 12px;
+    color: var(--gold-400);
+    animation: rise 0.7s ease both;
+    animation-delay: 0.12s;
+  }
+  .ornament .line{
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(90deg, transparent, rgba(217,184,119,0.55), transparent);
+  }
+  .ornament svg{ width: 16px; height: 16px; flex-shrink: 0; }
+
+  /* ---------- CTA buttons ---------- */
+  .cta-group{
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    animation: rise 0.7s ease both;
+    animation-delay: 0.18s;
+  }
+
+  .cta{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 999px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  .cta:active{ transform: scale(0.97); }
+
+  .cta .icon{ width: 34px; height: 34px; flex-shrink: 0; position: relative; z-index: 2; }
+  .cta .txt{ position: relative; z-index: 2; }
+  .cta .sub{
+    position: relative; z-index: 2;
+    display:block;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.88;
+    margin-top: 2px;
+  }
+  .cta .txt-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* shine sweep */
+  .cta::after{
+    content:"";
+    position: absolute;
+    top:0; left:-60%;
+    width: 40%; height: 100%;
+    background: linear-gradient(115deg, transparent, rgba(255,255,255,0.35), transparent);
+    transform: skewX(-18deg);
+    transition: left 0.7s ease;
+  }
+  .cta:hover::after{ left: 130%; }
+
+  .cta-whatsapp{
+    background: linear-gradient(135deg, var(--whatsapp), var(--whatsapp-dark));
+    color: #06210f;
+    box-shadow: 0 10px 24px -8px rgba(37,211,102,0.55);
+    animation: whatsappPulse 2s infinite ease-in-out;
+  }
+  .cta-whatsapp:hover{
+    box-shadow: 0 14px 32px -4px rgba(37,211,102,0.85);
+  }
+
+  @keyframes whatsappPulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 8px 20px -6px rgba(37,211,102,0.5);
+    }
+    50% {
+      transform: scale(1.04);
+      box-shadow: 0 14px 30px -4px rgba(37,211,102,0.85), 0 0 18px rgba(37,211,102,0.4);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 8px 20px -6px rgba(37,211,102,0.5);
+    }
+  }
+
+  .cta-site{
+    background: linear-gradient(135deg, #e91e63, #ad1457);
+    color: #ffffff;
+    box-shadow: 0 10px 24px -8px rgba(233,30,99,0.55);
+  }
+  .cta-site:hover{
+    box-shadow: 0 14px 30px -8px rgba(233,30,99,0.75);
+  }
+
+  .cta-ebook{
+    background: linear-gradient(135deg, var(--gold-400), var(--gold-600));
+    color: var(--ink-900);
+    box-shadow: 0 10px 24px -8px rgba(217,184,119,0.55);
+  }
+  .cta-ebook:hover{
+    box-shadow: 0 14px 30px -8px rgba(217,184,119,0.75);
+  }
+
+  .cta-shopee{
+    background: linear-gradient(135deg, #ff7a1a, #ee4d2d);
+    color: #ffffff;
+    border: 1px solid rgba(255,255,255,0.35);
+    box-shadow: 0 10px 24px -8px rgba(238,77,45,0.65);
+    animation: shopee-blink 1.2s ease-in-out infinite;
+  }
+  .cta-shopee:hover{
+    box-shadow: 0 14px 30px -8px rgba(238,77,45,0.9);
+  }
+  @keyframes shopee-blink{
+    0%, 100%{
+      box-shadow: 0 10px 24px -8px rgba(238,77,45,0.65);
+      filter: brightness(1);
+    }
+    50%{
+      box-shadow: 0 14px 34px -6px rgba(255,122,26,0.95);
+      filter: brightness(1.12);
+    }
+  }
+
+  /* ---------- Lead Gate (formulário de captura) ---------- */
+  body.is-gated{ overflow: hidden; }
+  body.is-gated .page{ display: none; }
+
+  .gate-overlay{
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background:
+      radial-gradient(ellipse 80% 60% at 15% 15%, rgba(200,20,87,0.35), transparent 55%),
+      radial-gradient(ellipse 80% 60% at 85% 85%, rgba(155,10,50,0.4), transparent 55%),
+      linear-gradient(180deg, var(--berry-950) 0%, var(--ink-900) 100%);
+  }
+  body.is-gated .gate-overlay{ display: flex; }
+
+  .gate-card{
+    width: 100%;
+    max-width: 380px;
+    background: linear-gradient(160deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    border: 1px solid rgba(217,184,119,0.35);
+    border-radius: 22px;
+    padding: 32px 24px 28px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.55);
+    backdrop-filter: blur(10px);
+    animation: rise 0.6s ease both;
+  }
+
+  .gate-logo{
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5), 0 0 0 2px var(--gold-400);
+  }
+
+  .gate-title{
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--cream-50);
+    margin: 0 0 8px;
+    line-height: 1.25;
+  }
+  .gate-title .accent{ color: var(--gold-300); font-style: italic; font-weight: 600; }
+
+  .gate-sub{
+    font-size: 0.85rem;
+    color: var(--cream-100);
+    margin: 0 0 22px;
+    line-height: 1.5;
+  }
+
+  .gate-form{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    text-align: left;
+  }
+
+  .gate-field{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .gate-field span{
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold-300);
+    font-weight: 600;
+  }
+  .gate-field input{
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(217,184,119,0.35);
+    background: rgba(251,243,234,0.06);
+    color: var(--cream-50);
+    outline: none;
+    transition: border-color 0.25s ease, background 0.25s ease;
+  }
+  .gate-field input::placeholder{ color: rgba(251,243,234,0.4); }
+  .gate-field input:focus{
+    border-color: var(--gold-400);
+    background: rgba(251,243,234,0.1);
+  }
+
+  .gate-submit{
+    margin-top: 6px;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #e91e63, #ad1457);
+    color: #fff;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    box-shadow: 0 10px 24px -8px rgba(233,30,99,0.55);
+    transition: transform 0.2s ease, box-shadow 0.3s ease, opacity 0.2s ease;
+  }
+  .gate-submit:hover{ box-shadow: 0 14px 30px -8px rgba(233,30,99,0.75); }
+  .gate-submit:active{ transform: scale(0.97); }
+  .gate-submit:disabled{ opacity: 0.7; cursor: not-allowed; }
+
+  .gate-error{
+    min-height: 18px;
+    margin: 4px 0 0;
+    font-size: 0.78rem;
+    color: #ffb4c6;
+    text-align: center;
+  }
+
+  .gate-privacy{
+    margin: 18px 0 0;
+    font-size: 0.62rem;
+    line-height: 1.5;
+    color: rgba(251,243,234,0.45);
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    margin-top: 34px;
+    text-align: center;
+    animation: rise 0.7s ease both;
+    animation-delay: 0.24s;
+  }
+  footer .sig{
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.82rem;
+    color: var(--gold-300);
+    letter-spacing: 0.02em;
+  }
+  footer .fine{
+    margin-top: 6px;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(251,243,234,0.4);
+  }
+
+  @keyframes rise{
+    from{ opacity: 0; transform: translateY(14px); }
+    to{ opacity: 1; transform: translateY(0); }
+  }
+
+  /* Focus visibility for keyboard users */
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--gold-300);
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 360px){
+    .wordmark{ font-size: 1.85rem; }
+    .tagline{ font-size: 1.05rem; }
+    .product-card .label{ font-size: 0.56rem; }
+  }
+</style>
+</head>
+<body class="is-gated">
+
+  <div class="bg-scene" aria-hidden="true"></div>
+
+  <!-- ============== FORMULÁRIO DE CAPTURA (GATE) ============== -->
+  <div class="gate-overlay" id="gateOverlay">
+    <div class="gate-card">
+      <img src="assets/logo.jpg" alt="BHC Beauty" class="gate-logo" />
+      <h2 class="gate-title">Bem-vinda(o) à <span class="accent">BHC Beauty</span></h2>
+      <p class="gate-sub">Preencha seus dados para acessar o conteúdo exclusivo</p>
+
+      <form id="gateForm" class="gate-form" novalidate>
+        <label class="gate-field">
+          <span>Nome</span>
+          <input type="text" id="gateNome" name="nome" placeholder="Seu nome completo" autocomplete="name" required />
+        </label>
+        <label class="gate-field">
+          <span>WhatsApp</span>
+          <input type="tel" id="gateWhatsapp" name="whatsapp" placeholder="(DDD) 00000-0000" autocomplete="tel" inputmode="numeric" required />
+        </label>
+        <label class="gate-field">
+          <span>E-mail</span>
+          <input type="email" id="gateEmail" name="email" placeholder="seu@email.com" autocomplete="email" required />
+        </label>
+
+        <button type="submit" class="gate-submit" id="gateSubmit">
+          <span id="gateSubmitText">Quero acessar</span>
+        </button>
+        <p class="gate-error" id="gateError" role="alert" aria-live="polite"></p>
+      </form>
+
+      <p class="gate-privacy">Seus dados estão seguros e serão usados apenas para contato sobre novidades da BHC Beauty.</p>
+    </div>
+  </div>
+
+  <main class="page">
+
+    <!-- ============== HEADER / BRAND MARK ============== -->
+    <div class="mark">
+      <img src="assets/logo.jpg" alt="BHC Beauty Logo" class="mark-logo" />
+      <h1 class="wordmark">BHC <span class="accent">Beauty</span></h1>
+      <p class="subwordmark">Skincare &amp; Wellness</p>
+
+      <p class="tagline">&ldquo;Sua beleza começa de dentro para fora.&rdquo;</p>
+
+      <div class="eyebrow-row">
+        <span class="line"></span>
+        <span class="txt">Skincare · Body Splash · Suplementos</span>
+        <span class="line right"></span>
+      </div>
+    </div>
+
+    <!-- ============== KIT COMPLETO BANNER ============== -->
+    <section class="kit-banner" aria-label="Kit Completo BHC">
+      <img src="assets/kit-completo-banner.png" alt="Kit Completo BHC - Ação Rápida em Cabelos Ralos, Tratamento para 3 Meses com 3 potes e brinde de Tônico Capilar, entrega garantida pela Shopee" loading="lazy" />
+    </section>
+
+    <!-- ============== VIDEOS SECTION (9:16 SHORTS) ============== -->
+    <section class="video-section" aria-label="Vídeos em destaque">
+      <div class="video-card">
+        <h2 class="video-title">Composição do Produto</h2>
+        <div class="video-action-hint">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          <span>Clique para assistir</span>
+        </div>
+        <div class="video-container">
+          <iframe 
+            src="https://www.youtube.com/embed/eEauAhmFFH4" 
+            title="Composição do Produto BHC Beauty"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <h2 class="video-title">Depoimentos</h2>
+        <div class="video-action-hint">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          <span>Clique para assistir</span>
+        </div>
+        <div class="video-container">
+          <iframe 
+            src="https://www.youtube.com/embed/w_NqBNdJy_U" 
+            title="Depoimentos BHC Beauty"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== ORNAMENT DIVIDER ============== -->
+    <div class="ornament" aria-hidden="true">
+      <span class="line"></span>
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.2 6.8H21l-5.6 4.1 2.2 6.8L12 16.6l-5.6 4.1 2.2-6.8L3 9.8h6.8z" fill="#d9b877"/></svg>
+      <span class="line"></span>
+    </div>
+
+    <!-- ============== CTA BUTTONS ============== -->
+    <div class="cta-group">
+
+      <a class="cta cta-ebook"
+         href="/assets/ebook-cuidados-essenciais.pdf"
+         target="_blank" rel="noopener noreferrer">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 3C9.5 3 7.2 3.6 5 4.7v13.6c2.2-1 4.5-1.5 7-1.5s4.8.5 7 1.5V4.7C16.8 3.6 14.5 3 12 3zm0 2c1.7 0 3.4.3 5 1v10.3c-1.6-.5-3.3-.8-5-.8s-3.4.3-5 .8V6c1.6-.7 3.3-1 5-1zm-1 2.5v9l2-1.2 2 1.2v-9l-2 1.2-2-1.2z"/>
+        </svg>
+        <span class="txt-wrap">
+          <span class="txt">Acesse seu E-book Gratuito</span>
+          <span class="sub">Cuidados essenciais: cabelo, pele e unhas</span>
+        </span>
+      </a>
+
+      <a class="cta cta-shopee"
+         href="https://s.shopee.com.br/W6AXs7pix"
+         target="_blank" rel="noopener noreferrer">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M18.5 8h-2.35a4.15 4.15 0 0 0-8.3 0H5.5a1.5 1.5 0 0 0-1.49 1.35l-1 10A1.5 1.5 0 0 0 4.5 21h15a1.5 1.5 0 0 0 1.49-1.65l-1-10A1.5 1.5 0 0 0 18.5 8zM12 5.5A2.15 2.15 0 0 1 14.13 8H9.87A2.15 2.15 0 0 1 12 5.5zM8 11a1 1 0 0 1-1-1V8.5a1 1 0 0 1 2 0V10a1 1 0 0 1-1 1zm8 0a1 1 0 0 1-1-1V8.5a1 1 0 0 1 2 0V10a1 1 0 0 1-1 1z"/>
+        </svg>
+        <span class="txt-wrap">
+          <span class="txt">Tratamento Kit 3 Meses BHC Hair</span>
+          <span class="sub">Comprar na Shopee · 3 potes</span>
+        </span>
+      </a>
+
+    </div>
+
+    <footer>
+      <p class="sig">BHC Beauty</p>
+      <p class="fine">Dentro para fora · Todos os direitos reservados</p>
+    </footer>
+
+  </main>
+
+  <script>
+    (function () {
+      var form = document.getElementById('gateForm');
+      var errorEl = document.getElementById('gateError');
+      var submitBtn = document.getElementById('gateSubmit');
+      var submitText = document.getElementById('gateSubmitText');
+
+      function unlockSite() {
+        document.body.classList.remove('is-gated');
+        try { localStorage.setItem('bhc_lead_captured', '1'); } catch (e) {}
+      }
+
+      // Se a pessoa já preencheu o formulário antes neste navegador, não pede de novo.
+      try {
+        if (localStorage.getItem('bhc_lead_captured') === '1') {
+          document.body.classList.remove('is-gated');
+        }
+      } catch (e) {}
+
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          errorEl.textContent = '';
+
+          var nome = document.getElementById('gateNome').value.trim();
+          var whatsapp = document.getElementById('gateWhatsapp').value.trim();
+          var email = document.getElementById('gateEmail').value.trim();
+
+          if (!nome || !whatsapp || !email) {
+            errorEl.textContent = 'Preencha todos os campos para continuar.';
+            return;
+          }
+
+          var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(email)) {
+            errorEl.textContent = 'Digite um e-mail válido.';
+            return;
+          }
+
+          var whatsappDigits = whatsapp.replace(/\D/g, '');
+          if (whatsappDigits.length < 10) {
+            errorEl.textContent = 'Digite um WhatsApp válido, com DDD.';
+            return;
+          }
+
+          submitBtn.disabled = true;
+          submitText.textContent = 'Enviando...';
+
+          fetch('/api/leads', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ nome: nome, whatsapp: whatsappDigits, email: email })
+          })
+            .then(function (resp) {
+              if (!resp.ok) { throw new Error('Falha ao enviar'); }
+              return resp.json();
+            })
+            .then(function () {
+              unlockSite();
+            })
+            .catch(function () {
+              errorEl.textContent = 'Não foi possível enviar agora. Tente novamente em instantes.';
+              submitBtn.disabled = false;
+              submitText.textContent = 'Quero acessar';
+            });
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>

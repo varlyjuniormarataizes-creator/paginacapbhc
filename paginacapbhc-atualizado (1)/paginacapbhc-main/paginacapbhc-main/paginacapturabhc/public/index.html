@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>BHC Beauty — Sua beleza começa de dentro para fora</title>
+<meta name="description" content="Skincare, Body Splash e Suplementos BHC Beauty. Fale com a gente no WhatsApp ou acesse nosso site." />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="BHC Beauty" />
+<meta property="og:description" content="Sua beleza começa de dentro para fora. Skincare • Body Splash • Suplementos." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================================================
+     BHC BEAUTY — Página de captura (link-in-bio)
+     Tema: boudoir de perfumaria — vinho profundo + verniz dourado
+     ============================================================ */
+
+  :root{
+    --berry-950: #37081c;
+    --berry-900: #4a0e26;
+    --berry-800: #6b1235;
+    --magenta-600: #c81457;
+    --crimson-600: #9e1b3e;
+    --gold-300: #ecd6a4;
+    --gold-400: #d9b877;
+    --gold-600: #b8874a;
+    --cream-50: #fbf3ea;
+    --cream-100: #f3e6d8;
+    --ink-900: #2a0a15;
+
+    --whatsapp: #25D366;
+    --whatsapp-dark: #1da851;
+
+    --font-display: 'Playfair Display', 'Georgia', serif;
+    --font-body: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html, body{
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background: var(--berry-950);
+  }
+
+  body{
+    font-family: var(--font-body);
+    color: var(--cream-50);
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 48px;
+  }
+
+  /* ---------- Ambient background ---------- */
+  .bg-scene{
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 40% at 50% 0%, rgba(216,163,90,0.16), transparent 60%),
+      radial-gradient(ellipse 80% 60% at 15% 15%, rgba(200,20,87,0.35), transparent 55%),
+      radial-gradient(ellipse 80% 60% at 85% 85%, rgba(155,10,50,0.4), transparent 55%),
+      linear-gradient(180deg, var(--berry-950) 0%, var(--ink-900) 100%);
+  }
+  .bg-scene::before{
+    /* faint damask texture using repeating radial dots */
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    background-image: radial-gradient(circle, var(--gold-300) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ scroll-behavior: auto !important; }
+  }
+
+  /* ---------- Page shell ---------- */
+  .page{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 440px;
+    padding: 40px 20px 0;
+  }
+
+  /* ---------- Header / mark ---------- */
+  .mark{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: rise 0.7s ease both;
+  }
+
+  .mark-logo{
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5), 0 0 0 2px var(--gold-400);
+    transition: transform 0.3s ease;
+  }
+  .mark-logo:hover{
+    transform: scale(1.04);
+  }
+
+  .wordmark{
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 2.15rem;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    color: var(--cream-50);
+    margin: 0;
+  }
+  .wordmark .accent{ color: var(--gold-300); font-style: italic; font-weight: 600; }
+
+  .subwordmark{
+    margin-top: 4px;
+    font-size: 0.72rem;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--gold-400);
+    font-weight: 600;
+  }
+
+  .tagline{
+    margin: 20px 0 0;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.18rem;
+    line-height: 1.4;
+    color: var(--cream-100);
+    max-width: 300px;
+  }
+
+  .eyebrow-row{
+    margin: 22px 0 0;
+    display:flex;
+    align-items:center;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+  .eyebrow-row .line{
+    height:1px;
+    width: 28px;
+    background: linear-gradient(90deg, transparent, var(--gold-400));
+  }
+  .eyebrow-row .line.right{ background: linear-gradient(90deg, var(--gold-400), transparent); }
+  .eyebrow-row span.txt{
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-300);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* ---------- Product shelf ---------- */
+  .shelf{
+    margin-top: 26px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    animation: rise 0.7s ease both;
+    animation-delay: 0.08s;
+  }
+
+  .product-card{
+    background: linear-gradient(160deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
+    border: 1px solid rgba(217,184,119,0.25);
+    border-radius: 16px;
+    padding: 8px 8px 10px;
+    text-align: center;
+    backdrop-filter: blur(2px);
+    transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+  }
+  .product-card:hover{
+    transform: translateY(-4px);
+    border-color: rgba(217,184,119,0.6);
+    background: linear-gradient(160deg, rgba(255,255,255,0.11), rgba(255,255,255,0.03));
+  }
+
+  .product-card .thumb{
+    width: 100%;
+    aspect-ratio: 4/5;
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--cream-50);
+  }
+  .product-card .thumb img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .product-card .label{
+    display:block;
+    margin-top: 8px;
+    font-size: 0.62rem;
+    letter-spacing: 0.03em;
+    color: var(--cream-100);
+    font-weight: 500;
+    line-height: 1.25;
+  }
+
+  /* ---------- Video section (9:16 Shorts) ---------- */
+  .video-section{
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    animation: rise 0.7s ease both;
+    animation-delay: 0.12s;
+  }
+
+  .video-card{
+    background: rgba(42, 10, 21, 0.65);
+    border: 1px solid rgba(217, 184, 119, 0.35);
+    border-radius: 20px;
+    padding: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    backdrop-filter: blur(8px);
+    text-align: center;
+  }
+
+  .video-title{
+    margin: 0 0 8px;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold-300);
+    letter-spacing: 0.02em;
+  }
+
+  .video-action-hint{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(200, 20, 87, 0.3);
+    border: 1px solid var(--gold-400);
+    color: var(--gold-300);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  .video-action-hint svg{
+    width: 12px;
+    height: 12px;
+    fill: var(--gold-300);
+  }
+
+  .video-container{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+  }
+
+  .video-container iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* ---------- Divider ornament ---------- */
+  .ornament{
+    margin: 30px auto 0;
+    width: 100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 12px;
+    color: var(--gold-400);
+    animation: rise 0.7s ease both;
+    animation-delay: 0.12s;
+  }
+  .ornament .line{
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(90deg, transparent, rgba(217,184,119,0.55), transparent);
+  }
+  .ornament svg{ width: 16px; height: 16px; flex-shrink: 0; }
+
+  /* ---------- CTA buttons ---------- */
+  .cta-group{
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    animation: rise 0.7s ease both;
+    animation-delay: 0.18s;
+  }
+
+  .cta{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 999px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  .cta:active{ transform: scale(0.97); }
+
+  .cta .icon{ width: 34px; height: 34px; flex-shrink: 0; position: relative; z-index: 2; }
+  .cta .txt{ position: relative; z-index: 2; }
+  .cta .sub{
+    position: relative; z-index: 2;
+    display:block;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.88;
+    margin-top: 2px;
+  }
+  .cta .txt-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* shine sweep */
+  .cta::after{
+    content:"";
+    position: absolute;
+    top:0; left:-60%;
+    width: 40%; height: 100%;
+    background: linear-gradient(115deg, transparent, rgba(255,255,255,0.35), transparent);
+    transform: skewX(-18deg);
+    transition: left 0.7s ease;
+  }
+  .cta:hover::after{ left: 130%; }
+
+  .cta-whatsapp{
+    background: linear-gradient(135deg, var(--whatsapp), var(--whatsapp-dark));
+    color: #06210f;
+    box-shadow: 0 10px 24px -8px rgba(37,211,102,0.55);
+    animation: whatsappPulse 2s infinite ease-in-out;
+  }
+  .cta-whatsapp:hover{
+    box-shadow: 0 14px 32px -4px rgba(37,211,102,0.85);
+  }
+
+  @keyframes whatsappPulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 8px 20px -6px rgba(37,211,102,0.5);
+    }
+    50% {
+      transform: scale(1.04);
+      box-shadow: 0 14px 30px -4px rgba(37,211,102,0.85), 0 0 18px rgba(37,211,102,0.4);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 8px 20px -6px rgba(37,211,102,0.5);
+    }
+  }
+
+  .cta-site{
+    background: linear-gradient(135deg, #e91e63, #ad1457);
+    color: #ffffff;
+    box-shadow: 0 10px 24px -8px rgba(233,30,99,0.55);
+  }
+  .cta-site:hover{
+    box-shadow: 0 14px 30px -8px rgba(233,30,99,0.75);
+  }
+
+  /* ---------- Floating WhatsApp Button ---------- */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    z-index: 9999;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--whatsapp), var(--whatsapp-dark));
+    color: #06210f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(37,211,102,0.55);
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: floatPulse 2.2s infinite ease-in-out;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 24px rgba(37,211,102,0.8);
+  }
+
+  .whatsapp-float svg {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+  }
+
+  .whatsapp-float::before {
+    content: "";
+    position: absolute;
+    top: -5px; left: -5px; right: -5px; bottom: -5px;
+    border-radius: 50%;
+    border: 2px solid var(--whatsapp);
+    animation: floatRing 2.2s infinite ease-out;
+    pointer-events: none;
+  }
+
+  @keyframes floatPulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 8px 24px rgba(37,211,102,0.6); }
+    50% { transform: scale(1.08); box-shadow: 0 12px 30px rgba(37,211,102,0.85); }
+  }
+
+  @keyframes floatRing {
+    0% { transform: scale(0.9); opacity: 0.9; }
+    80%, 100% { transform: scale(1.38); opacity: 0; }
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    margin-top: 34px;
+    text-align: center;
+    animation: rise 0.7s ease both;
+    animation-delay: 0.24s;
+  }
+  footer .sig{
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.82rem;
+    color: var(--gold-300);
+    letter-spacing: 0.02em;
+  }
+  footer .fine{
+    margin-top: 6px;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(251,243,234,0.4);
+  }
+
+  @keyframes rise{
+    from{ opacity: 0; transform: translateY(14px); }
+    to{ opacity: 1; transform: translateY(0); }
+  }
+
+  /* Focus visibility for keyboard users */
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--gold-300);
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 360px){
+    .wordmark{ font-size: 1.85rem; }
+    .tagline{ font-size: 1.05rem; }
+    .product-card .label{ font-size: 0.56rem; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="bg-scene" aria-hidden="true"></div>
+
+  <main class="page">
+
+    <!-- ============== HEADER / BRAND MARK ============== -->
+    <div class="mark">
+      <img src="assets/logo.jpg" alt="BHC Beauty Logo" class="mark-logo" />
+      <h1 class="wordmark">BHC <span class="accent">Beauty</span></h1>
+      <p class="subwordmark">Skincare &amp; Wellness</p>
+
+      <p class="tagline">&ldquo;Sua beleza começa de dentro para fora.&rdquo;</p>
+
+      <div class="eyebrow-row">
+        <span class="line"></span>
+        <span class="txt">Skincare · Body Splash · Suplementos</span>
+        <span class="line right"></span>
+      </div>
+    </div>
+
+    <!-- ============== PRODUCT SHELF ============== -->
+    <section class="shelf" aria-label="Nossos produtos">
+      <div class="product-card">
+        <div class="thumb">
+          <img src="assets/suplemento.jpg" alt="BHC Suplemento Alimentar em Cápsulas para Cabelo, Pele e Unhas, 60 cápsulas" loading="lazy" />
+        </div>
+        <span class="label">Suplemento<br>Cabelo &amp; Pele</span>
+      </div>
+
+      <div class="product-card">
+        <div class="thumb">
+          <img src="assets/body_splash.jpg" alt="BHC Passion Pure Body Splash, 200ml" loading="lazy" />
+        </div>
+        <span class="label">Body Splash<br>Passion Pure</span>
+      </div>
+
+      <div class="product-card">
+        <div class="thumb">
+          <img src="assets/serum_facial.jpg" alt="BHC Sérum Facial com Rosa Mosqueta e Ácido Hialurônico, 30ml" loading="lazy" />
+        </div>
+        <span class="label">Sérum Facial<br>Rosa Mosqueta</span>
+      </div>
+    </section>
+
+    <!-- ============== VIDEOS SECTION (9:16 SHORTS) ============== -->
+    <section class="video-section" aria-label="Vídeos em destaque">
+      <div class="video-card">
+        <h2 class="video-title">Composição do Produto</h2>
+        <div class="video-action-hint">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          <span>Clique para assistir</span>
+        </div>
+        <div class="video-container">
+          <iframe 
+            src="https://www.youtube.com/embed/eEauAhmFFH4" 
+            title="Composição do Produto BHC Beauty"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <h2 class="video-title">Depoimentos</h2>
+        <div class="video-action-hint">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          <span>Clique para assistir</span>
+        </div>
+        <div class="video-container">
+          <iframe 
+            src="https://www.youtube.com/embed/w_NqBNdJy_U" 
+            title="Depoimentos BHC Beauty"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== ORNAMENT DIVIDER ============== -->
+    <div class="ornament" aria-hidden="true">
+      <span class="line"></span>
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.2 6.8H21l-5.6 4.1 2.2 6.8L12 16.6l-5.6 4.1 2.2-6.8L3 9.8h6.8z" fill="#d9b877"/></svg>
+      <span class="line"></span>
+    </div>
+
+    <!-- ============== CTA BUTTONS ============== -->
+    <div class="cta-group">
+
+      <!-- 
+        ⚠️ EDITE AQUI: troque 5599999999999 pelo número de WhatsApp real
+        (código do país + DDD + número, somente dígitos).
+      -->
+      <a class="cta cta-whatsapp"
+         href="https://wa.me/5528981039747?text=Ol%C3%A1%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20do%20BHC"
+         target="_blank" rel="noopener noreferrer">
+        <svg class="icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+          <path d="M16.001 3C9.096 3 3.5 8.596 3.5 15.5c0 2.42.686 4.68 1.874 6.598L3 29l7.086-2.317A12.42 12.42 0 0 0 16.001 28C22.906 28 28.5 22.404 28.5 15.5S22.906 3 16.001 3zm0 22.7c-2.05 0-3.96-.578-5.585-1.58l-.4-.245-4.204 1.375 1.39-4.1-.26-.42A10.16 10.16 0 0 1 5.3 15.5c0-5.9 4.8-10.7 10.701-10.7S26.7 9.6 26.7 15.5 21.9 25.7 16.001 25.7zm5.86-8.02c-.32-.16-1.9-.94-2.194-1.047-.294-.107-.508-.16-.722.16-.213.32-.828 1.047-1.015 1.26-.187.213-.374.24-.694.08-.32-.16-1.351-.498-2.573-1.588-.951-.849-1.593-1.897-1.78-2.217-.187-.32-.02-.493.14-.653.144-.143.32-.374.48-.56.16-.187.213-.32.32-.534.107-.213.053-.4-.027-.56-.08-.16-.722-1.744-.99-2.39-.26-.626-.526-.542-.722-.552l-.615-.011c-.213 0-.56.08-.854.4s-1.12 1.093-1.12 2.667c0 1.573 1.146 3.093 1.306 3.307.16.213 2.256 3.446 5.467 4.83.764.33 1.36.527 1.826.674.767.244 1.465.21 2.017.127.615-.092 1.9-.776 2.167-1.526.267-.75.267-1.393.187-1.527-.08-.133-.293-.213-.613-.373z"/>
+        </svg>
+        <span class="txt-wrap">
+          <span class="txt">Fale comigo no WhatsApp</span>
+          <span class="sub">Resposta rápida</span>
+        </span>
+      </a>
+
+    </div>
+
+    <footer>
+      <p class="sig">BHC Beauty</p>
+      <p class="fine">Dentro para fora · Todos os direitos reservados</p>
+    </footer>
+
+  </main>
+
+  <!-- ============== FLOATING WHATSAPP BUTTON ============== -->
+  <a class="whatsapp-float"
+     href="https://wa.me/5528981039747?text=Ol%C3%A1%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20do%20BHC"
+     target="_blank" 
+     rel="noopener noreferrer"
+     aria-label="Fale comigo no WhatsApp">
+    <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+      <path d="M16.001 3C9.096 3 3.5 8.596 3.5 15.5c0 2.42.686 4.68 1.874 6.598L3 29l7.086-2.317A12.42 12.42 0 0 0 16.001 28C22.906 28 28.5 22.404 28.5 15.5S22.906 3 16.001 3zm0 22.7c-2.05 0-3.96-.578-5.585-1.58l-.4-.245-4.204 1.375 1.39-4.1-.26-.42A10.16 10.16 0 0 1 5.3 15.5c0-5.9 4.8-10.7 10.701-10.7S26.7 9.6 26.7 15.5 21.9 25.7 16.001 25.7zm5.86-8.02c-.32-.16-1.9-.94-2.194-1.047-.294-.107-.508-.16-.722.16-.213.32-.828 1.047-1.015 1.26-.187.213-.374.24-.694.08-.32-.16-1.351-.498-2.573-1.588-.951-.849-1.593-1.897-1.78-2.217-.187-.32-.02-.493.14-.653.144-.143.32-.374.48-.56.16-.187.213-.32.32-.534.107-.213.053-.4-.027-.56-.08-.16-.722-1.744-.99-2.39-.26-.626-.526-.542-.722-.552l-.615-.011c-.213 0-.56.08-.854.4s-1.12 1.093-1.12 2.667c0 1.573 1.146 3.093 1.306 3.307.16.213 2.256 3.446 5.467 4.83.764.33 1.36.527 1.826.674.767.244 1.465.21 2.017.127.615-.092 1.9-.776 2.167-1.526.267-.75.267-1.393.187-1.527-.08-.133-.293-.213-.613-.373z"/>
+    </svg>
+  </a>
+
+</body>
+</html>
