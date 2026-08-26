@@ -1,8 +1,0 @@
-{
-  "name": "BHC Beauty",
-  "description": "BHC Beauty — Skincare, Body Splash e Suplementos. Fale conosco no WhatsApp ou acesse nosso site.",
-  "requestFramePermissions": [],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
-}
